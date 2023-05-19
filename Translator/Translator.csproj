@@ -5,8 +5,12 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ApplicationIcon>Aha-Soft-Iron-Man-Ironman-Mask-2-Silver.512.ico</ApplicationIcon>
+    <ApplicationIcon>asset\Ico.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="asset\Ico.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.47.0" />

@@ -9,10 +9,10 @@ namespace Translator
             AnsiConsole.Write(
                     new FigletText("Void Translator")
                         .Centered()
-                        .Color(Color.Teal)
+                        .Color(Color.MediumOrchid1_1)
                 );
 
-            var rule = new Rule("[red] (￣﹃￣) [/]")
+            var rule = new Rule("[turquoise4] (￣﹃￣) [/]")
             {
                 Border = BoxBorder.Heavy
             };
@@ -36,23 +36,23 @@ namespace Translator
 
             var root = new Tree("Root")
                 .Guide(TreeGuide.BoldLine);
-            root.AddNode("[purple] Translator.sln[/]");
+            root.AddNode("[mediumpurple3_1] Translator.sln[/]");
 
-            var Bin = root.AddNode("[yellow]Bin[/]");
+            var Bin = root.AddNode("[gold1]Bin[/]");
 
-            var debug = Bin.AddNode("[green]Debug[/]");
+            var debug = Bin.AddNode("[lightcyan1]Debug[/]");
 
-            debug.AddNode("[cyan]Translator.exe [/]");
+            debug.AddNode("[grey62]Translator.exe [/]");
 
-            var src = root.AddNode("[red] Src [/]");
+            var src = root.AddNode("[gold1] Src [/]");
 
-            src.AddNode("[red] Program.cs[/]");
+            src.AddNode("[darkseagreen4_1] Program.cs[/]");
 
-            src.AddNode("[red] VoiceVoxUtility.cs[/]");
+            src.AddNode("[darkseagreen4_1] VoiceVoxUtility.cs[/]");
 
-            src.AddNode("[red] BootUp.cs[/]");
+            src.AddNode("[darkseagreen4_1] BootUp.cs[/]");
 
-            src.AddNode("[red] Translate.cs[/]");
+            src.AddNode("[darkseagreen4_1] Translate.cs[/]");
 
 
             var treePad = new Padder(root).PadBottom(4).PadLeft(1).PadTop(1);
@@ -75,7 +75,7 @@ namespace Translator
 
             AnsiConsole.Write(grid);
 
-            var rule2 = new Rule("[blue] Enjoy [/]")
+            var rule2 = new Rule("[slateblue3_1] Enjoy [/]")
             {
                 Border = BoxBorder.Heavy
             };

@@ -29,7 +29,7 @@ namespace Translator
                 AnsiConsole.MarkupLine("");
 
                 _count++;
-                var rule = new Rule($"[red] {_count} [/]");
+                var rule = new Rule($"[darkred] {_count} [/]");
                 rule.Border = BoxBorder.Ascii;
 
                 AnsiConsole.Write(rule);

@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 
 namespace Translator;
 
-public static class VoicevoxUtility
+public static class VoiceVoxUtility
 {
     // IDK whtat to do need a voicevox running url
     const string baseUrl = "https://major-sites-follow.loca.lt/";

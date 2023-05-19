@@ -4,7 +4,7 @@ namespace Translator
 {
     public static class BootUp
     {
-       public static void BootUpConsole()
+        public static void BootUpConsole()
         {
             AnsiConsole.Write(
                     new FigletText("Void Translator")

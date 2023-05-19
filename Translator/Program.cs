@@ -1,7 +1,9 @@
-﻿using System.Net;
+﻿using System.Media;
+using System.Net;
 using System.Text;
 using System.Web;
-using Sharprompt;
+
+namespace Translator;
 
 class Program
 {
@@ -10,8 +12,8 @@ class Program
     {
         String Translate(String word)
         {
-            var toLanguage = "fa";//Japanese
-            //var fromLanguage = selectedLanguage;//English
+            var toLanguage = "ja";//Japanese
+            //var fromLanguage = selectedLanguage;
             var url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl={toLanguage}&dt=t&q={HttpUtility.UrlEncode(word)}";
             var webClient = new WebClient
             {
@@ -23,6 +25,7 @@ class Program
 
                 result = result.Substring(4, result.IndexOf("\"", 4, StringComparison.Ordinal) - 4);
                 Console.WriteLine(result);
+                //VoicevoxUtility.Speek(result, 39).Wait();
                 return result;
             }
             catch
@@ -31,7 +34,7 @@ class Program
             }
         }
 
-        var selectLanguage = Prompt.Select("Select Input Language", new[] { "en", "da" });
+        //var selectLanguage = Prompt.Select("Select Input Language", new[] { "en", "da" });
         //? To make System Read Japanese
         Console.OutputEncoding = Encoding.Unicode;
 
@@ -42,5 +45,3 @@ class Program
     }
 
 }
-
-

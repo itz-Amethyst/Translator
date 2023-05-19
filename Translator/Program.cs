@@ -18,9 +18,29 @@ class Program
         {
             AnsiConsole.Write(
                     new FigletText("Void Translator")
-                        .LeftJustified()
+                        .Centered()
                         .Color(Color.Teal)
                 );
+
+            var rule = new Rule("[red] (￣﹃￣) [/]");
+            rule.Border = BoxBorder.Ascii;
+
+            var rulePad = new Padder(rule).PadBottom(3);
+
+            AnsiConsole.Write(rulePad);
+
+            var panel = new Panel("Fix VoiceVox");
+
+            panel.Header = new PanelHeader("Todo");
+            panel.HeaderAlignment(Justify.Center);
+
+            panel.Padding = new Padding(3, 3, 3, 3);
+
+            panel.Border = BoxBorder.Ascii;
+
+            var panelPad = new Padder(panel).PadTop(1).PadRight(3);
+
+            //AnsiConsole.Write(panelPad);
 
             var root = new Tree("Root")
                 .Guide(TreeGuide.BoldLine);
@@ -43,26 +63,52 @@ class Program
             src.AddNode("[red] Translate.cs[/]");
 
 
+            var treePad = new Padder(root).PadBottom(4).PadLeft(1).PadTop(1);
+
+            var breakDown = new BreakdownChart()
+                .Width(100)
+                // Add item is in the order of label, value, then color.
+                .AddItem("C#", 50, Color.Green)
+                .AddItem("Idea", 50, Color.Yellow);
+
+            var breakPad = new Padder(breakDown).PadTop(4);
 
             // Render the tree
-            AnsiConsole.Write(root);
+        //AnsiConsole.Write(treePad);
 
-            AnsiConsole.Progress()
-                .StartAsync(async ctx=>
-                {
-                    // Define tasks
-                    var task1 = ctx.AddTask("[green]Reticulating splines[/]");
-                    var task2 = ctx.AddTask("[green]Folding space[/]");
+            var grid = new Grid();
 
-                    while (!ctx.IsFinished)
-                    {
-                        await Task.Delay(22);
-                        task1.Increment(1.5);
-                        task2.Increment(0.5);
-                    }
+            grid.AddColumn();
+            grid.AddColumn();
+            grid.AddColumn();
+
+            grid.AddRow(treePad, panelPad , breakPad);
+
+            AnsiConsole.Write(grid);
+
+            var rule2 = new Rule("[blue] Enjoy [/]");
+            rule.Border = BoxBorder.Ascii;
+
+            AnsiConsole.Write(rule2);
 
 
-                });
+
+            //AnsiConsole.Progress()
+            //    .StartAsync(async ctx=>
+            //    {
+            //        // Define tasks
+            //        var task1 = ctx.AddTask("[green]Reticulating splines[/]");
+            //        var task2 = ctx.AddTask("[green]Folding space[/]");
+
+            //        while (!ctx.IsFinished)
+            //        {
+            //            await Task.Delay(22);
+            //            task1.Increment(1.5);
+            //            task2.Increment(0.5);
+            //        }
+
+
+            //    });
 
 
         }

@@ -11,7 +11,7 @@ namespace Translator
         [Obsolete("Obsolete")]
         public static String TranslateText(String word)
         {
-            var toLanguage = "ja";//Japanese
+            var toLanguage = "ja"; //Japanese
             //var fromLanguage = selectedLanguage;
             var url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl={toLanguage}&dt=t&q={HttpUtility.UrlEncode(word)}";
             var webClient = new WebClient();

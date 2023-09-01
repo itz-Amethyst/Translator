@@ -4,8 +4,11 @@ namespace Translator
 {
     public static class BootUp
     {
+        //? Customization part 
         public static void BootUpConsole()
         {
+            // Top Bar Section
+
             AnsiConsole.Write(
                     new FigletText("Void Translator")
                         .Centered()
@@ -34,6 +37,8 @@ namespace Translator
 
             var panelPad = new Padder(panel).PadRight(6);
 
+            // Root Tree
+
             var root = new Tree("Root")
                 .Guide(TreeGuide.BoldLine);
             root.AddNode("[mediumpurple3_1] Translator.sln[/]");
@@ -54,8 +59,9 @@ namespace Translator
 
             src.AddNode("[darkseagreen4_1] Translate.cs[/]");
 
-
             var treePad = new Padder(root).PadBottom(4).PadLeft(1).PadTop(1);
+
+            // BreakDown Style
 
             var breakDown = new BreakdownChart()
                 .Width(100)
@@ -64,6 +70,8 @@ namespace Translator
                 .AddItem("Idea", 50, Color.Yellow);
 
             var breakPad = new Padder(breakDown).PadTop(4);
+
+            // Grid Section
 
             var grid = new Grid();
 
